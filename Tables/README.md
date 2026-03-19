@@ -27,15 +27,15 @@ python 0_process_inputExcel.py -h
 
 ``` bash
 python 0_process_inputExcel.py \
-  -a 鸬鹚2-fovea.xlsx 鸬鹚2-peri2.xlsx \
+  -a Sp2-fovea.xlsx Sp2-peri2.xlsx \
   -b template.xlsx \
-  -o Pcarbo2_SAW_spatial_scRNA_V2_batch2.xlsx \
-  -p "/Files/snRNA-seq_Data/Phalacrocorax_carbo" \
-  -r "/Files/Phalacrocorax_carbo/STAR" \
+  -o Sp2_SAW_spatial_scRNA_V2_batch2.xlsx \
+  -p "/Files/snRNA-seq_Data/Species_name" \
+  -r "/Files/Species_name/STAR" \
   --mem 120 \
   --sc_mem 80 \
-  --organism "Phalacrocorax_carbo" \
-  --tissue "Retina" 
+  --organism "Species_name" \
+  --tissue "Tissue_name" 
 ```
 
 <div align="right"><a href="#navi">⬆ Back to top</a></div>
