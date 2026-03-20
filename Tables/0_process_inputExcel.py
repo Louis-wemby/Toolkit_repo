@@ -81,7 +81,7 @@ def main():
         print("[!] 警告：A 表中未找到 'FastQ2' 列！")
 
     # 3. 拼接 ChipMask 路径
-    df_b['ChipMask'] = df_a['SN'].apply(lambda sn: f"/Files/Rawdata/{sn}.barcodeToPos.h5")
+    df_b['ChipMask'] = df_a['SN'].apply(lambda sn: f"/Files/RawData/{sn}.barcodeToPos.h5")
 
     # 4. ReferenceIndex: 仅在首个出现的 Unique SN 处填入，其余保持空 (NaN)
     df_b['ReferenceIndex'] = None
