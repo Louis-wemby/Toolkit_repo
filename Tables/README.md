@@ -17,7 +17,7 @@ Scripts in this repo handle table-related issues. Supported formats include `.cs
 
 ## 0.测序数据统计表格的生成
 
-根据芯片号与物种的对应关系和下机交付的`Sequencing data.xlsx`表格，可以利用脚本`0_seqStats_gen.py`从中提取某一物种的全部下机数据，整理为可直接通过“数据管理-添加文件-集群上传”挂载到相应文件夹下存储的表格（可能需要复制到`fastImport.xlsx`模板表格中）.关键列名：二级路径（`Secondary Path`），时空芯片号（`SN`），芯片号（`chip number`），Barcode 号（`Barcode number`），泳道（`Lane`）等等.
+根据芯片号与物种的对应关系和下机交付的`Sequencing data.xlsx`表格，可以利用脚本`0_seqStats_gen.py`从中提取某一物种的全部下机数据，整理为可直接通过“数据管理-添加文件-集群上传”挂载到相应文件夹下存储的表格（可能需要复制到`fastqImport.xlsx`模板表格中）.关键列名：二级路径（`Secondary Path`），时空芯片号（`SN`），芯片号（`chip number`），Barcode 号（`Barcode number`），泳道（`Lane`）等等.
 
 ### Usage
 
