@@ -5,7 +5,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from pathlib import Path
 
-# 定义你需要提取的所有目标指标（严格按照你提供的顺序）
+# 定义需要提取的所有指标
 TARGET_METRICS = [
     "Correction",
     "Estimated Number of Raw cells",
@@ -57,7 +57,7 @@ def extract_metrics_from_html(file_path):
             
             # 匹配目标指标
             for key in TARGET_METRICS:
-                if results[key] == "NA": # 如果还没提取到
+                if results[key] == "NA":
                     key_cleaned = clean_text(key)
                     # 采用完全相等或包含关系进行匹配
                     if key_cleaned == label_cleaned or label_cleaned.startswith(key_cleaned):
@@ -119,7 +119,7 @@ def main():
     if data:
         df = pd.DataFrame(data)
         df.to_excel(args.output_file, index=False)
-        print(f"\n🎉 提取完成！共处理了 {len(data)} 个 HTML 报告。")
+        print(f"[✓] 提取完成！共处理了 {len(data)} 个 HTML 报告。")
         print(f"结果已保存至: {Path(args.output_file).resolve()}")
     else:
         print("[!] 未找到符合要求的 HTML 文件，请检查路径层级是否完全符合: 大路径/task_ID/scRNA_result/report/*.html")
