@@ -27,7 +27,7 @@ if ("spot_class" %in% colnames(meta)) {
 }
 meta$barcode <- rownames(meta)
 
-write.csv(meta, file = "meta_weights.csv", quote = F, row.names = F)
+write.csv(meta, file = "meta_weights.csv", quote = FALSE, row.names = FALSE)
 saveRDS(geoseu1, file = "RCTD_full.weights.rds", compress = TRUE)
 
 # Case2: Specifying Celltypes
@@ -35,7 +35,7 @@ weights <- as.matrix(obj@results[["weights"]])
 dominant_type <- colnames(weights)[max.col(weights, ties.method = "first")]
 ct_manual <- data.frame(
   first_type = dominant_type,
-  spot_class = "classified", 
+  spot_class = "classified",
   row.names = rownames(weights),
   stringsAsFactors = FALSE
 )
