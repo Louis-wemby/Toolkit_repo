@@ -12,6 +12,8 @@ Scripts in this repo handle table-related issues. Supported formats include `.cs
     - [Usage](#usage-1)
   - [2.单细胞流程分析结果指标提取](#2单细胞流程分析结果指标提取)
     - [Usage](#usage-2)
+  - [3.筛选新增行](#3筛选新增行)
+    - [Usage](#usage-3)
 
 ---
 
@@ -85,5 +87,21 @@ python 2_extract_metrics.py \
 ```
 
 这里我们只需输入对应任务输出目录中`task ID`的前一级目录，代码即可遍历检索全部子文件夹.
+
+## 3.筛选新增行
+
+由于测序下机数据通常不能一次性交付完，为了避免重复挂载或者重复投递，可以通过对比新旧表格筛选出新增的行，即为新交付的数据。相关脚本为 `3_compare_tables.py`.
+
+### Usage
+
+```bash
+python 3_compare_tables.py \
+  -a old_table.xlsx
+  -b new_table.xlsx
+  -o added_table.xlsx
+  -k key_column
+```
+
+注意，参数 `-k` 为用于比对的唯一标识列，若不指定则进行严格的全行匹配（容易匹配不上）. 建议指定 `-k` 为 `*FastQ1` 或者 `FastQ2` 列，这两列基本是唯一的（有时候芯片号 `SN` 列不一定唯一）.这样百分比能筛选出新增的行.
 
 <div align="right"><a href="#navi">⬆ Back to top</a></div>
