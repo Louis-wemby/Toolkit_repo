@@ -23,6 +23,7 @@ names(coordinates) <- "spatial"
 # Active assay: RNA
 #  1 dimensional reduction calculated: spatial
 # Use the code below:
+
 # coords <- as.data.frame(object[["spatial"]]@cell.embeddings)
 # row <- coords$SPATIAL_1
 # col <- coords$SPATIAL_2
