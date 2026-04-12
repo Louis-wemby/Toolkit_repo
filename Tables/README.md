@@ -76,12 +76,12 @@ python 1_process_inputExcel.py \
 
 ## 2.单细胞流程分析结果指标提取
 
-在运行完`spatial_scRNA-V2`流程分析后，会生成相应的`.html`报告文件，从中提取单细胞质控后的相关指标，可利用脚本`2_extract_metrics.py`实现。导出的格式为 Excel 表格.
+在运行完`spatial_scRNA-V2`流程分析后，会生成相应的`.html`报告文件，从中提取单细胞质控后的相关指标，可利用脚本`2_extract_scRNA-seq_metrics.py`实现。导出的格式为 Excel 表格.
 
 ### Usage
 
 ```bash
-python 2_extract_metrics.py \
+python 2_extract_scRNA-seq_metrics.py \
   -i /Files/ResultData/.../SpeciesName/
   -o summary_metrics.xlsx
 ```
