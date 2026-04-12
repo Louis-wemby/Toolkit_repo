@@ -16,7 +16,6 @@ def extract_saw_metrics(json_file_path, output_name):
         sys.exit(1)
     
     # --- 1. 数据定位 ---
-    # 使用 .get() 配合默认空字典/列表，提高代码鲁棒性
     report_gene = data.get("7.Report summary", {}).get("7.1.Gene", [{}])[0]
     anno_dist = data.get("2.Annotation", {}).get("2.3.Annotation", [{}])[0]
     tissue_summary = data.get("3.TissueCut", {}).get("3.1.Summary", [{}])[0]
