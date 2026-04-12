@@ -14,6 +14,8 @@ Scripts in this repo handle table-related issues. Supported formats include `.cs
     - [Usage](#usage-2)
   - [3.筛选新增行](#3筛选新增行)
     - [Usage](#usage-3)
+  - [4.空转流程结果报告指标提取](#4空转流程结果报告指标提取)
+    - [Usage](#usage-4)
 
 ---
 
@@ -103,5 +105,17 @@ python 3_compare_tables.py \
 ```
 
 注意，参数 `-k` 为用于比对的唯一标识列，若不指定则进行严格的全行匹配（容易匹配不上）. 建议指定 `-k` 为 `*FastQ1` 或者 `FastQ2` 列，这两列基本是唯一的（有时候芯片号 `SN` 列不一定唯一）.这样百分百能筛选出新增的行.
+
+## 4.空转流程结果报告指标提取
+
+脚本 `4_extract_ST_metrics.py` 用于从空转 SAW-ST-V8 流程输出的结果报告中提取相关测序指标。为便于提取，此处选择结果目录下的 `<SN>.statistics.json` 文件作为输入，最终以 Excel 表格的形式输出。
+
+### Usage
+
+```bash
+python 4_extract_ST_metrics.py \
+  -i <SN>.statistics.json \
+  -o <SN>_ST_metrics.xlsx
+```
 
 <div align="right"><a href="#navi">⬆ Back to top</a></div>
